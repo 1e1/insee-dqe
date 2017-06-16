@@ -1,0 +1,19 @@
+version: '3'
+services:
+  rails:
+    build: ./ruby/
+    volumes:
+      - ..:/usr/src/app/
+    env_file: .env
+    expose:
+      - "3000"
+    environment:
+      RACK_ENV: "development"
+      RAILS_ENV: "development"
+      PORT: "3000"
+      TERM_CHILD: "1"
+      RESQUE_TERM_TIMEOUT: "7"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 100k

@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idk: 
+  men: 1
+  men_surf: 1
+  men_occ5: 1
+  men_coll: 1
+  men_5ind: 1
+  men_1ind: 1
+  i_1ind: 1
+  men_prop: 1
+  i_prop: 1
+  men_basr: 1
+  i_basr: 1
+  ind_r: 1
+  ind_age1: 1
+  ind_age2: 1
+  ind_age3: 1
+  ind_age4: 1
+  ind_age5: 1
+  ind_age6: 1
+  ind_age7: 1
+  i_age7: 1
+  ind_age8: 1
+  i_age8: 1
+  ind_srf: 1
+  nbcar: 1
+
+two:
+  idk: 
+  men: 1
+  men_surf: 1
+  men_occ5: 1
+  men_coll: 1
+  men_5ind: 1
+  men_1ind: 1
+  i_1ind: 1
+  men_prop: 1
+  i_prop: 1
+  men_basr: 1
+  i_basr: 1
+  ind_r: 1
+  ind_age1: 1
+  ind_age2: 1
+  ind_age3: 1
+  ind_age4: 1
+  ind_age5: 1
+  ind_age6: 1
+  ind_age7: 1
+  i_age7: 1
+  ind_age8: 1
+  i_age8: 1
+  ind_srf: 1
+  nbcar: 1

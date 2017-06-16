@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Idinspire</th>
+      <th>Idk</th>
+      <th>Ind c</th>
+      <th>Nbcar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tiles.each do |tile| %>
+      <tr>
+        <td><%= tile.id %></td>
+        <td><%= tile.idINSPIRE %></td>
+        <td><%= tile.idk %></td>
+        <td><%= tile.ind_c %></td>
+        <td><%= tile.nbcar %></td>
+        <td><%= link_to 'Show', tile %></td>
+        <td><%= link_to 'Edit', edit_tile_path(tile) %></td>
+        <td><%= link_to 'Destroy', tile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tile', new_tile_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  idINSPIRE: MyString
+  idk: MyString
+  ind_c: 1
+  nbcar: 1
+
+two:
+  id: MyString
+  idINSPIRE: MyString
+  idk: MyString
+  ind_c: 1
+  nbcar: 1

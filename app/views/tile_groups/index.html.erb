@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tile Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idk</th>
+      <th>Men</th>
+      <th>Men surf</th>
+      <th>Men occ5</th>
+      <th>Men coll</th>
+      <th>Men 5ind</th>
+      <th>Men 1ind</th>
+      <th>I 1ind</th>
+      <th>Men prop</th>
+      <th>I prop</th>
+      <th>Men basr</th>
+      <th>I basr</th>
+      <th>Ind r</th>
+      <th>Ind age1</th>
+      <th>Ind age2</th>
+      <th>Ind age3</th>
+      <th>Ind age4</th>
+      <th>Ind age5</th>
+      <th>Ind age6</th>
+      <th>Ind age7</th>
+      <th>I age7</th>
+      <th>Ind age8</th>
+      <th>I age8</th>
+      <th>Ind srf</th>
+      <th>Nbcar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tile_groups.each do |tile_group| %>
+      <tr>
+        <td><%= tile_group.idk %></td>
+        <td><%= tile_group.men %></td>
+        <td><%= tile_group.men_surf %></td>
+        <td><%= tile_group.men_occ5 %></td>
+        <td><%= tile_group.men_coll %></td>
+        <td><%= tile_group.men_5ind %></td>
+        <td><%= tile_group.men_1ind %></td>
+        <td><%= tile_group.i_1ind %></td>
+        <td><%= tile_group.men_prop %></td>
+        <td><%= tile_group.i_prop %></td>
+        <td><%= tile_group.men_basr %></td>
+        <td><%= tile_group.i_basr %></td>
+        <td><%= tile_group.ind_r %></td>
+        <td><%= tile_group.ind_age1 %></td>
+        <td><%= tile_group.ind_age2 %></td>
+        <td><%= tile_group.ind_age3 %></td>
+        <td><%= tile_group.ind_age4 %></td>
+        <td><%= tile_group.ind_age5 %></td>
+        <td><%= tile_group.ind_age6 %></td>
+        <td><%= tile_group.ind_age7 %></td>
+        <td><%= tile_group.i_age7 %></td>
+        <td><%= tile_group.ind_age8 %></td>
+        <td><%= tile_group.i_age8 %></td>
+        <td><%= tile_group.ind_srf %></td>
+        <td><%= tile_group.nbcar %></td>
+        <td><%= link_to 'Show', tile_group %></td>
+        <td><%= link_to 'Edit', edit_tile_group_path(tile_group) %></td>
+        <td><%= link_to 'Destroy', tile_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tile Group', new_tile_group_path %>

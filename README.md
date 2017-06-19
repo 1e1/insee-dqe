@@ -9,7 +9,14 @@ docker-compose up -d
 
 * Ruby version
 
+2.4.1p111
+
 * System dependencies
+
+```bash
+heroku buildpacks:set https://github.com/cyberdelia/heroku-geo-buildpack.git
+heroku buildpacks:add heroku/ruby
+```
 
 * Configuration
 

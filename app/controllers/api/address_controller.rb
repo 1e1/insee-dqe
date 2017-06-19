@@ -53,7 +53,7 @@ class Api::AddressController < ActionController::Base
     url= 'https://maps.googleapis.com/maps/api/geocode/json'
     params = {
         address: address,
-        #key: 1,
+        key: ENV['GOOGLE_API_KEY'],
     }
 
     response = RestClient.get(url, params: params)

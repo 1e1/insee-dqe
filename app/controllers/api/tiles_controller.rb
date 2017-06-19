@@ -6,18 +6,6 @@ class Api::TilesController < ApplicationController
   before_action :set_tile, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: [:csv]
 
-  def points2
-    render json: Tile.all.pluck(:longitude_min, :latitude_min).lazy.map { |t|
-      { lng: t[0], lat: t[1] }
-    }
-  end
-
-  def points
-    render json: Tile.order("RANDOM()").limit(5000).pluck(:longitude_min, :latitude_min).lazy.map { |t|
-      { lng: t[0], lat: t[1] }
-    }
-  end
-
   def search
 =begin
     tile = Tile

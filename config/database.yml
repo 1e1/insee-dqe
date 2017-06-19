@@ -7,7 +7,7 @@
 default: &default
   #adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV['DB_POOL'] || ENV['MAX_THREADS'] || 5 %>
   timeout: 5000
   adapter: postgis
   postgis_extension: postgis      # default is postgis
@@ -30,4 +30,5 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, 'postgis') %>
+

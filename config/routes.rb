@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
     resource :tiles, only: [:index, :delete]
 
-    get '/points', to: 'tiles#points'
     get '/tile', to: 'tiles#search'
     post '/tiles/csv', to: 'tiles#csv'
     post '/tile_groups/csv', to: 'tile_groups#csv'

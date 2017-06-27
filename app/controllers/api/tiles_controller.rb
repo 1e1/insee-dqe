@@ -26,16 +26,15 @@ class Api::TilesController < ApplicationController
     else
       tile_group = tile.tile_group
 
-      population_total_from65to74yearsold = tile_group.ind_age7 - tile_group.ind_age8
-      population_total_from25to64yearsold = tile_group.ind_age6 - tile_group.ind_age7
-      population_total_from18to24yearsold = ( tile_group.ind_r
-        - tile_group.ind_age6
-        - tile_group.ind_age5
-        - tile_group.ind_age4
-        - tile_group.ind_age3
-        - tile_group.ind_age2
-        - tile_group.ind_age1
-      )
+      population_total_from65to74yearsold = tile_group.ind_age7 - tile_group.ind_age8 # 75+
+      population_total_from25to64yearsold = tile_group.ind_age6 - tile_group.ind_age7 # 65+
+      population_total_from18to24yearsold = tile_group.ind_r - # all
+        tile_group.ind_age6 - # 25+
+        tile_group.ind_age5 - # 15-17
+        tile_group.ind_age4 - # 11-14
+        tile_group.ind_age3 - # 6-10
+        tile_group.ind_age2 - # 4-5
+        tile_group.ind_age1   # 0-3
 
       render json: {
           id:  tile.id,

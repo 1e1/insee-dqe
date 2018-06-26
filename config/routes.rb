@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    get '/dqe', to: 'dqe#hack'
     get '/address', to: 'address#search'
 
     resource :tiles, only: [:index, :delete]

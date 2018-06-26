@@ -61,4 +61,6 @@ Rails.application.configure do
       address: 'mailcatcher',
       port:    1025
   }
+
+  #RestClient.log = Rails.logger
 end

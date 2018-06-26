@@ -36,6 +36,8 @@ class Api::TilesController < ApplicationController
         tile_group.ind_age2 - # 4-5
         tile_group.ind_age1   # 0-3
 
+      # https://www.insee.fr/fr/statistiques/2520034#dictionnaire
+
       render json: {
           id:  tile.id,
           population: tile.ind_c,

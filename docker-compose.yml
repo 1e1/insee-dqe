@@ -78,10 +78,10 @@ services:
 #          memory: 16m
 
   web:
-    build: ./compose/ruby/
+    build: .
     volumes:
       - .:/usr/src/app/
-    env_file: ./compose/.env
+    env_file: .env
     expose:
       - "3000"
     environment:

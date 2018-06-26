@@ -3,13 +3,52 @@ class Api::AddressController < ActionController::Base
 
   def search
     begin
-      render json: query_gouv_fr(params[:q])
+      #render json: query_gouv_fr(params[:q])
+      render json: query_dqe(params[:q])
     rescue
       render json: query_google(params[:q])
     end
   end
 
   private
+
+  def query_dqe(address)
+    url = 'https://prod2.dqe-software.com/RNVP/'
+    params = {
+        Adresse: address,
+        Instance: 0,
+        Taille: 38,
+        Pays: 'FRA',
+        Licence: ENV['DQE_API_KEY'],
+    }
+
+    response = RestClient.get(url, params: params)
+
+    longitude = JsonPath.on(response, '$.1.Longitude').first
+    latitude = JsonPath.on(response, '$.1.Latitude').first
+    
+    country = 'France'
+    postcode = JsonPath.on(response, '$.1.CodePostal').first
+    city = JsonPath.on(response, '$.1.Localite').first
+    extra = JsonPath.on(response, '$.1.Complement').first
+    street = JsonPath.on(response, '$.1.Voie').first
+    streetType = JsonPath.on(response, '$.1.TypeVoie').first
+    number = JsonPath.on(response, '$.1.Numero').first
+
+    output = {
+        longitude: longitude,
+        latitude: latitude,
+        country: country,
+        postcode: postcode,
+        city: city,
+        street: "#{streetType} #{street}".strip,
+        number: number,
+        extra: extra,
+        source: url,
+    }
+
+    return output;
+  end
 
   def query_gouv_fr(address)
     url = 'http://api-adresse.data.gouv.fr/search/'
